@@ -1,87 +1,104 @@
 <template>
-     <transition-group  id="slidercontent" mode="out-in" tag="div" name="fade">        
-        <div class="imagerender" :key="counter">
-            <img :src="changeCarousal()" alt="">
+     <transition-group  id="slidercontent" mode="out-in" tag="div" :name="transition_effect">        
+        <div class="imagerender" :key="counter" >
+          <div class="img" :style = "changeCarousal()" ></div>
         </div>
      </transition-group>
 </template>
 
 <script>
 export default {
-  props:["imgContents","counter"],
+  props:["imgContents","counter","direction"],
+  data(){
+    return{
+      transition_effect : "fade"
+    }
+  },
   methods : {
     changeCarousal(){
-      return this.imgContents[this.counter].path;
+      var path = this.imgContents[this.counter].path;
+      if(this.direction == "left"){
+        this.transition_effect = "fadeleft";
+      }
+      else{
+        this.transition_effect = "fade";
+      }
+      return {backgroundImage : "url("+path+")"};
     }
   }
 }
 </script>
 
 <style>
-/* #slidercontent{
+#slidercontent {
   
+  display: inline-block;
   height: inherit;
-  width: auto;
-  display: inline-block;
-}
- */
-#slidercontent{
-  overflow: hidden;
-  display: inline-block;
-  
-}
-#slidercontent .imagerender, #slidercontent .imagerender img{
-  height: inherit;
-    width: auto;
-  display: inline-block;
-  
-  
-}
-#slidercontent .imagerender img{
   width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+#slidercontent .imagerender{
   height: 100vh;
+  width: 100%;
+  display: inline-block;
+  overflow: hidden;
 }
 
+#slidercontent .imagerender .img{
+  width: 100vw;
+  display: inline-block;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+overflow: hidden;
+}
+#slidercontent .imagerender:hover #slidercontent{
+  animation-play-state: paused;
+}
  .fade-enter-active{
     animation-name: fade-enter;
     animation-iteration-count: 1;
     animation-duration: 1s;
-    /* animation-fill-mode: forwards; */
-    /* animation-timing-function: ease-in-out; */
 }
 .fade-move{
   transition: transform 1s;
 }
 .fade-leave-active{
-    
     animation-name: fade-leave;
     animation-iteration-count: 1;
     animation-duration: 1s;
-    /* animation-fill-mode: forwards; */
-    /* animation-timing-function: ease-in-out; */
     position: absolute;
 }
 @keyframes fade-enter {
-    from{
-        
-        transform: translate(100%,0px); 
-        
-    }
-    to{
-         
-          transform: translate(0px,0px); 
-    }
+    from{transform: translate(100%,0%);}
+    to{transform: translate(0%,0%);}
 }   
 @keyframes fade-leave {
-    from{
-       
-         transform: translate(0px,0px); 
-    }
-    to{
-       
-          transform: translate(-100%,0px); 
-    }
+    from{transform: translate(0%,0%);}
+    to{transform: translate(-100%,0%);}
 }
 
-
+.fadeleft-enter-active{
+    animation-name: fade-enter-left;
+    animation-iteration-count: 1;
+    animation-duration: 1s;
+}
+.fadeleft-move{
+  transition: transform 1s;
+}
+.fadeleft-leave-active{    
+    animation-name: fade-leave-left;
+    animation-iteration-count: 1;
+    animation-duration: 1s;
+    position: absolute;
+}
+@keyframes fade-enter-left {
+    from{transform: translate(-100%,0%); }
+    to{transform: translate(0%,0%); }
+}   
+@keyframes fade-leave-left {
+    from{transform: translate(0%,0%);}
+    to{transform: translate(100%,0%); }
+}
 </style>
