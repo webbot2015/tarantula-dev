@@ -19,11 +19,7 @@ For detailed explanation on how things work, consult the [docs for vue-loader](h
 
 ```
 git clone clone_url`
-
 git add .
-
 git commit -a -m 'checkin message
-
 git push
-
 ```
