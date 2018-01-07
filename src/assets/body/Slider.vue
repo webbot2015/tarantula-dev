@@ -182,7 +182,7 @@ export default {
     left: 48%;
 }
 
-#slider .imageIndividualSelection .active{
+#slider .bottom-controls .imageIndividualSelection .active{
     background-color: grey;
 }
 
