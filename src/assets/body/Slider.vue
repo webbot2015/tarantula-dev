@@ -145,7 +145,7 @@ export default {
 
 <style>
 #slider{
-    height: 100vh;
+    height: 90vh;
     width: 100%;
     display: inline-block;
     position: relative;

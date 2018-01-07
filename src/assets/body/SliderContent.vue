@@ -39,7 +39,7 @@ export default {
   position: relative;
 }
 #slidercontent .imagerender{
-  height: 100vh;
+  height: 90vh;
   width: 100%;
   display: inline-block;
   overflow: hidden;
@@ -48,7 +48,7 @@ export default {
 #slidercontent .imagerender .img{
   width: 100vw;
   display: inline-block;
-  height: 100vh;
+  height: 90vh;
   background-repeat: no-repeat;
   background-size: cover;
 overflow: hidden;

@@ -1,5 +1,6 @@
 <template>
   <div class="body">
+      <div style="height:10vh;min-height : 50px;"></div>
       <slider-ii></slider-ii>
       <content-ii></content-ii>
   </div>

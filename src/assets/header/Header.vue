@@ -98,12 +98,13 @@ export default {};
   color: white;
   display: flex;  
   height:10%;
+  min-height : 50px;
   /* align-items: center; */
   border-bottom: 2px green solid;
   position: fixed;
   width: 100%;
   z-index: 100;
-  opacity: 0.8;
+  opacity: 1;
 }
 .header .logo{
   flex-grow: 1;
@@ -135,7 +136,7 @@ export default {};
 }
 .horizontal-bar > ul > li > a{
   position: relative;
-  top: 40%;
+  top: 35%;
 }
 .horizontal-bar  ul  li{
   opacity: 1;
