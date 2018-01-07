@@ -17,7 +17,13 @@ npm run build
 
 For detailed explanation on how things work, consult the [docs for vue-loader](http://vuejs.github.io/vue-loader).
 
-'git clone clone_url`
-`git add .`
-`git commit -a -m 'checkin message`
-'git push'
+```
+git clone clone_url`
+
+git add .
+
+git commit -a -m 'checkin message
+
+git push
+
+```
