@@ -7,10 +7,18 @@
     <div class="right" @click="control('right')">
         <div>right</div>
     </div>
+    <div class="bottom-controls">
+         <div class="imageIndividualSelection">
+        <div v-for="(imgContent,key) in imgContents" :key="key">
+            <div class="active" v-if="counter == imgContent.id">{{imgContent.id}}</div>
+            <div v-else @click="imageIndividualSelection(imgContent.id)">{{imgContent.id}}</div>
+        </div>
+    </div>
     <div class="pauseandplay">
         <div :style="imageStateStyle">
             <div @click="imageState()" :style="imageStateStyle">{{this.pauseandplayText}}</div>
         </div>
+    </div>
     </div>
   </div>
 </template>
@@ -119,6 +127,13 @@ export default {
             console.log("returnTimeout1");
             console.log(this.returnSetTimeout);
             console.log("in initializeSetTimeout method end");
+      },
+      imageIndividualSelection(imageId){
+          console.log("imageIndividualSelection: "+imageId);
+          this.counter = imageId;
+          clearInterval(this.returnSetTimeout);
+          this.returnSetTimeout =null;
+          this.initializeSetTimeout();
       }
   },
   created(){
@@ -157,33 +172,62 @@ export default {
     background-color: red;
 }
 
-#slider .pauseandplay{
+
+
+
+#slider .bottom-controls{
     
     position: absolute;
-    height: 60px;
-    color:black;
-    z-index: 1;
-    bottom: 0;
-    left: 47%;
-    width: 50px;
-    border-radius: 50%;
+    bottom: 0px;
+    left: 48%;
 }
 
-#slider .pauseandplay div{
+#slider .imageIndividualSelection .active{
+    background-color: grey;
+}
+
+#slider .bottom-controls .imageIndividualSelection{
+    display: inline-block;
+}
+#slider .bottom-controls .imageIndividualSelection div{
+    display: inline-block;
+    margin-right: 3px;
+    border: 1px solid black;
+    border-radius: 50%;
+    height: 17px;
+    width: 17px;
+    text-align: center;
+    background-color: orange;
+    color:black;
+    font-weight: bold;
+}
+
+#slider .bottom-controls .pauseandplay{
+    height: 48px;
+    color:black;
+    width: 50px;
+    border-radius: 50%;
     position: relative;
-    top: 30%;
+    left: 25%;
+}
+
+#slider .bottom-controls .pauseandplay div{
     text-align: center;
     display: inline-block;
     width: 50px;
     height: 31px;
     border-radius: 50%;
-    
     transition: all .3s ease-in-out;
     color:white;
+    position: relative;
+    margin-top: 13%;
 }
 
-#slider .pauseandplay div:hover {
+#slider .bottom-controls .pauseandplay div:hover {
  background-color: blue;
 }
+
+
+
 /* npm install vue-fontawesome */
 </style>
