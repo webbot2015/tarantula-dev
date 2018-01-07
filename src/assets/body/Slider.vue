@@ -8,8 +8,8 @@
         <div>right</div>
     </div>
     <div class="pauseandplay">
-        <div>
-            <div @click="imageState()">{{this.pauseandplayText}}</div>
+        <div :style="imageStateStyle">
+            <div @click="imageState()" :style="imageStateStyle">{{this.pauseandplayText}}</div>
         </div>
     </div>
   </div>
@@ -34,16 +34,18 @@ export default {
         counter: 0,
         direction : "right",
         returnSetTimeout : null,
-        pauseandplayText : "II"
+        pauseandplayText : "II",
+        imageStateStyle : {backgroundColor : "green"}
       };
   },
   methods : {
       control(data){
+          console.log("in control before "+this.counter);
           console.log("data: "+data);
           var counter = this.counter;
           console.log("returnTimeout2");
          console.log(this.returnSetTimeout);
-
+        console.log("counter before "+counter);
           if(data == "left"){
             counter--;
             console.log("counter1- "+counter);   
@@ -60,40 +62,63 @@ export default {
           }
           this.direction = data;
           this.counter = counter;
+          this.imageStateStyle = {backgroundColor : "green"};
+          this.pauseandplayText="II";
           clearInterval(this.returnSetTimeout);
+          this.returnSetTimeout =null;
+          console.log("counter after "+this.counter);
           this.initializeSetTimeout();
-          console.log("counter2 "+counter);
+          
       },
       imageState(){
+          console.log("in imageState method start");
+          console.log("this.pauseandplayText "+this.pauseandplayText);
+              console.log("this.returnSetTimeout start");
+              console.log(this.returnSetTimeout);
           if(this.pauseandplayText == "II"){
-              this.pauseandplayText = ">";
-            this.returnSetTimeout = clearInterval(this.returnSetTimeout);
+            this.imageStateStyle = {backgroundColor : "red"};
+            this.pauseandplayText = ">";
+            clearInterval(this.returnSetTimeout);
+            this.returnSetTimeout = null;
+
+            console.log("this.returnSetTimeout if");
+            console.log(this.returnSetTimeout);
+
           }
           else{
-              console.log("this.returnSetTimeout");
-              console.log(this.returnSetTimeout);
+            console.log("in else");
+            
             if(this.returnSetTimeout){
-                
+                console.log("in else if");
             }else{
+                console.log("in else else");
+                this.imageStateStyle = {backgroundColor : "green"};
                 this.pauseandplayText="II";
-                this.initializeSetTimeout();
+                this.control("right");
+                //this.initializeSetTimeout();
             }
           }
+          console.log("in imageState method end");
       },
       initializeSetTimeout(){
-            console.log("in initializeSetTimeout");
+            console.log("in initializeSetTimeout method start");
             var self = this;
+            
             this.returnSetTimeout = setInterval(()=>{
-            if(self.counter>1){
-                self.counter = 0 ;
-            }
-            else{
-                self.counter = self.counter+1;
-            }
-
+                console.log("setinterval start");
+                console.log("self.counter before "+self.counter);
+                if(self.counter>3){
+                    self.counter = 0 ;
+                }
+                else{
+                    self.counter = self.counter+1;
+                }
+                console.log("self.counter after "+self.counter);
+                console.log("setinterval end");
             },4000);    
             console.log("returnTimeout1");
             console.log(this.returnSetTimeout);
+            console.log("in initializeSetTimeout method end");
       }
   },
   created(){
@@ -152,7 +177,7 @@ export default {
     width: 50px;
     height: 31px;
     border-radius: 50%;
-    background-color: red;
+    
     transition: all .3s ease-in-out;
     color:white;
 }
