@@ -53,9 +53,16 @@ export default {
   background-size: cover;
 overflow: hidden;
 }
-#slidercontent .imagerender:hover #slidercontent{
+
+/* #slidercontent .imagerender:hover #slidercontent{
   animation-play-state: paused;
-}
+} */
+
+/* #slidercontent .imagerender:hover .img {
+  animation-play-state: paused;
+} */
+
+
  .fade-enter-active{
     animation-name: fade-enter;
     animation-iteration-count: 1;
