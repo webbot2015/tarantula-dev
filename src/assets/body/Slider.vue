@@ -37,11 +37,11 @@
             <div v-else @click="imageIndividualSelection(imgContent.id)"><!-- {{imgContent.id}} --></div>
         </div>
     </div>
-    <!-- <div class="pauseandplay">
+     <div class="pauseandplay">
         <div :style="imageStateStyle">
             <div @click="imageState()" :style="imageStateStyle">{{this.pauseandplayText}}</div>
         </div>
-    </div> -->
+    </div> 
     </div>
   </div>
 </template>
@@ -136,7 +136,7 @@ export default {
             console.log("in initializeSetTimeout method start");
             var self = this;
             
-           /*  this.returnSetTimeout = setInterval(()=>{
+             this.returnSetTimeout = setInterval(()=>{
                 console.log("setinterval start");
                 console.log("self.counter before "+self.counter);
                 //if(self.counter>3){
@@ -148,7 +148,7 @@ export default {
                 }
                 console.log("self.counter after "+self.counter);
                 console.log("setinterval end");
-            },4000);   */  
+            },7000);    
             console.log("returnTimeout1");
             console.log(this.returnSetTimeout);
             console.log("in initializeSetTimeout method end");
@@ -194,6 +194,7 @@ export default {
     color: white;
     font-weight: 900;
     font-size: 20px;
+    cursor: pointer;
 }
 #slider .left:hover, #slider .right:hover{
     background-color: red;
@@ -226,6 +227,7 @@ export default {
     background-color: transparent;
     color:black;
     font-weight: bold;
+    cursor: pointer;
     
 }
 #slider .bottom-controls .imageIndividualSelection div div{
@@ -238,7 +240,7 @@ export default {
     width: 50px;
     border-radius: 50%;
     position: relative;
-    left: 25%;
+    /* left: 25%; */
 }
 
 #slider .bottom-controls .pauseandplay div{
@@ -251,6 +253,7 @@ export default {
     color:white;
     position: relative;
     margin-top: 13%;
+    cursor: pointer;
 }
 
 #slider .bottom-controls .pauseandplay div:hover {
@@ -516,7 +519,7 @@ animation-name: slidertextaction1;
 }
 @keyframes slidertext-1-logo {
     from{
-        transform: perspective(500px) translateZ(400px);
+        transform: perspective(500px) translateZ(300px);
     }
     to{
         transform: perspective(500px) translateZ(0px);

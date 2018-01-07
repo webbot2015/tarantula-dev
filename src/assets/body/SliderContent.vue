@@ -58,9 +58,10 @@ overflow: hidden;
   animation-play-state: paused;
 } */
 
-/* #slidercontent .imagerender:hover .img {
+ #slidercontent .imagerender:hover .img {
+   background-color: green;
   animation-play-state: paused;
-} */
+} 
 
 
  .fade-enter-active{
