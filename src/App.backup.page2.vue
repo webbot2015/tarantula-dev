@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import Gate from './merge/Gate.vue';
+import Gate from './page2/Gate.vue';
 
 export default {
   components : {
@@ -15,6 +15,9 @@ export default {
     return {
       
     }
+  },
+  methods : {
+
   }
 }
 </script>
