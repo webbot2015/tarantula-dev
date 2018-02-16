@@ -36,18 +36,21 @@
         </div>  
     </div>
     <div class="description">
+        <div></div>
+        <div>
             <div class="section2link"></div>
             <div class="detail">
               <div class="image-handshake"></div>
               <div class="bulletpoints">
-                <ul>
-                  <li>Contact Tarantula (Links)</li>
-                  <li>We will initiate project discussion</li>
-                  <li>One to one meeting will be based on customer requirements</li>
-                </ul>
+                  <ul>
+                      <li>Contact Tarantula (Links)</li>
+                      <li>We will initiate project discussion</li>
+                      <li>One to one meeting will be based on customer requirements</li>
+                  </ul>
               </div>
             </div>
-          </div>
+        </div>
+    </div>
   </div>
 </template>
 
@@ -100,7 +103,7 @@ export default {
 #workflow .workflowsection{
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   background-color: brown;
   padding-bottom:1%;
   padding-top: 1%;
@@ -155,6 +158,7 @@ position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
+    margin: 0px 10px;
 }
 
 #workflow .workflowsection .discussion,

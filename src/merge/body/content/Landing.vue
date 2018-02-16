@@ -6,10 +6,12 @@
         </div>
         <div class="body">
             <div class="left"></div>
-            <div class="right">
-                <div class="logo"></div>
+            <!-- <div class="right">
+                <div class="logo"></div> 
                 <div class="cube"></div>
             </div>
+             -->
+             <div class="right"></div>
         </div>
     </div>
 </template>
@@ -78,35 +80,39 @@ export default {
     }
 
     #landing .body{
-        margin-top: 20px;
-        height: 360px;
+        /* margin-top: 20px; */
+        height: calc(100vh - 50px);
         width: 100%;
-        display: block;
+        /* display: block; */
         display: flex;
         
         justify-content: space-evenly;
         position: relative;
     }
     #landing .body .left {
-        position: relative;
-        height: inherit;
+
         background-image: url(/public/images/page2/webdev1_2.png);
         background-size: contain;
         background-repeat: no-repeat;
-        background-position: left;
-        /* min-width: 400px; */
-       width: 500px;
-        height: 100%;
-        background-position-y: 0px;
+        background-position: center;
+        flex-grow: 1;
     }
     #landing .body .right {
+         background-image: url(/public/images/page2/webdev2.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+         position: relative;
+         flex-grow: 1;
+    }
+    /* #landing .body .right {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         width: 400px;
-    }
+    } */
 
-     #landing .body .right .logo{
+  /*    #landing .body .right .logo{
         display: block;
         background-image: url(/public/images/page2/logotext900.png);
         background-size: contain;
@@ -114,9 +120,9 @@ export default {
         background-position: left;
         background-position-y: 0px;
         height: 100px;
-     }
+     } */
 
-     #landing .body .right .cube{
+    /*  #landing .body .right .cube{
          background-image: url(/public/images/page2/webdev2.png);
         background-size: contain;
         background-repeat: no-repeat;
@@ -124,35 +130,38 @@ export default {
         background-position-y: 0px;
         height: 250px;
         display: block;
-     }
+     } */
 
     @media only screen and (max-width: 800px) {
          #landing{
-             height: 550px;
-             width: 100%;
+             
          }
         #landing .body{
+            flex-direction: column;
+        }
+      
+       /*  #landing .body{
             flex-direction: column-reverse;
             height: inherit;
             align-items: center;
-        }
-         #landing .body .left {
+        } */
+         /* #landing .body .left {
             height: 100%;
             width: 100%;
              background-position: center;
-         }
-          #landing .body .right{
+         } */
+         /*  #landing .body .right{
             justify-content: center;
             width: 100%;
             align-items: center;
-          }
-        #landing .body .right .logo {
+          } */
+        /* #landing .body .right .logo {
             display: none;
-        }
-        #landing .body .right .cube {
+        } */
+       /*  #landing .body .right .cube {
             width: inherit;
             height: 325px;
             background-position: center;
-        }
+        } */
     }
 </style>
