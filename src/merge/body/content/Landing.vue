@@ -95,7 +95,8 @@ export default {
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
-        flex-grow: 1;
+        /* flex-grow: 1; */
+        
     }
     #landing .body .right {
          background-image: url(/public/images/page2/webdev2.png);
@@ -103,7 +104,11 @@ export default {
         background-repeat: no-repeat;
         background-position: center;
          position: relative;
-         flex-grow: 1;
+        /*  flex-grow: 1; */
+        
+    }
+    #landing .body .left , #landing .body .right {
+        width: 40vw;
     }
     /* #landing .body .right {
         display: flex;
@@ -139,7 +144,11 @@ export default {
         #landing .body{
             flex-direction: column;
         }
-      
+      #landing .body .left , #landing .body .right {
+        flex-grow: 1;
+        width: 100vw;
+        margin-top: 6%;
+    }
        /*  #landing .body{
             flex-direction: column-reverse;
             height: inherit;
@@ -164,4 +173,9 @@ export default {
             background-position: center;
         } */
     }
+     @media only screen and (max-width: 400px) {
+        #landing .body .left , #landing .body .right {
+                margin-top: 0%;
+            }
+     }
 </style>

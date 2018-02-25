@@ -1,7 +1,7 @@
 <template>
   <div id="functionalities">
      <div class="titlebar">
-            <div class="text">Pipeline</div>
+            <div class="text">Services</div>
             <div class="arrow" id="arrow-down"></div>
         </div>
 <div class="functionalities-content">

@@ -22,5 +22,6 @@ export default {
 .body{
     height:auto;
     width: auto;
+    overflow-x: hidden;
 }
 </style>
