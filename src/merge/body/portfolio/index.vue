@@ -142,7 +142,8 @@ export default {
 #portfolio .portfolioContainer .socialNetwork_9 {
     display: flex;
     flex: 1;   
-    height: 100vh;
+    /* height: 100vh; */
+    height: 75vh;
 
 }
 
@@ -187,16 +188,43 @@ display: block;
     background-position: center;
     background-position-y: 0px;
     background-color: aqua;
-    width: 50vw;
+    width: 45vw;
     background-position: center;
-    background-size: cover;
+    background-size: contain;
+    height: 75vh;
+    position: relative;
+    
 }
+
+#portfolio .portfolioContainer .applicationDevelopment_1 .image,
+#portfolio .portfolioContainer .services_3 .image,
+#portfolio .portfolioContainer .development_5 .image,
+#portfolio .portfolioContainer .seo_7 .image,
+#portfolio .portfolioContainer .socialNetwork_9 .image {
+top: 7%;
+left: 5%;
+
+}
+
+
+#portfolio .portfolioContainer .web_design_2 .image,
+#portfolio .portfolioContainer .graphic_design_4 .image,
+#portfolio .portfolioContainer .scalableHostting_6 .image,
+#portfolio .portfolioContainer .marketing_8 .image {
+    top: 7%;
+    /* right: 5%; */
+}
+
+
+
+
+
 
 #portfolio .portfolioContainer .applicationDevelopment_1 .image{
     background-image: url(/public/images/portfolio/1_applicationDevelopment.jpg); 
 }
 #portfolio .portfolioContainer .web_design_2 .image{
-    background-image: url(/public/images/portfolio/2_web_design.jpg); 
+    background-image: url(/public/images/portfolio/2_web_design_resized.jpg); 
 }
 #portfolio .portfolioContainer .services_3 .image{
     background-image: url(/public/images/portfolio/3_services.png); 
@@ -258,17 +286,20 @@ display: block;
 #portfolio .portfolioContainer .marketing_8 ,
 #portfolio .portfolioContainer .socialNetwork_9 {
     flex-direction: column;
+    top:0;
+    left:0;
 }
 
 #portfolio .portfolioContainer .applicationDevelopment_1 .text, #portfolio .portfolioContainer .web_design_2 .text, #portfolio .portfolioContainer .services_3 .text, #portfolio .portfolioContainer .graphic_design_4 .text, #portfolio .portfolioContainer .development_5 .text, #portfolio .portfolioContainer .scalableHostting_6 .text, #portfolio .portfolioContainer .seo_7 .text, #portfolio .portfolioContainer .marketing_8 .text, #portfolio .portfolioContainer .socialNetwork_9 .text{
         width: 100vw;
-    height: 100vh;
+    
 }
 
 #portfolio .portfolioContainer .applicationDevelopment_1 .image, #portfolio .portfolioContainer .web_design_2 .image, #portfolio .portfolioContainer .services_3 .image, #portfolio .portfolioContainer .graphic_design_4 .image, #portfolio .portfolioContainer .development_5 .image, #portfolio .portfolioContainer .scalableHostting_6 .image, #portfolio .portfolioContainer .seo_7 .image, #portfolio .portfolioContainer .marketing_8 .image, #portfolio .portfolioContainer .socialNetwork_9 .image 
 {
         width: 100vw;
-        height: 100vh;
+        background-size: cover;
+        
 }
 #portfolio .portfolioContainer .web_design_2 .text, #portfolio .portfolioContainer .graphic_design_4 .text, 
  #portfolio .portfolioContainer .scalableHostting_6 .text, 
