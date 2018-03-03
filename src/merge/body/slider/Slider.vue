@@ -25,10 +25,12 @@
     </div>
 
     <div class="left" @click="control('left')">
-        <div>&lt;</div>
+        <!-- <div>&lt;</div> -->
+        <div></div>
     </div>
     <div class="right" @click="control('right')">
-        <div>&gt;</div>
+        <!-- <div>&gt;</div> -->
+        <div></div>
     </div>
     <div class="bottom-controls">
          <div class="imageIndividualSelection">
@@ -37,11 +39,11 @@
             <div v-else @click="imageIndividualSelection(imgContent.id)"><!-- {{imgContent.id}} --></div>
         </div>
     </div>
-     <div class="pauseandplay">
+     <!-- <div class="pauseandplay">
         <div :style="imageStateStyle">
             <div @click="imageState()" :style="imageStateStyle">{{this.pauseandplayText}}</div>
         </div>
-    </div> 
+    </div> --> 
     </div>
   </div>
 </template>
@@ -178,13 +180,25 @@ export default {
 }
 #slider .left, #slider .right{
     position: absolute;
-    background-color: blue;
+    /* background-color: blue; */
     top: 45%;
     height: 40px;
     width: 40px;
     border-radius: 50%;
     transition: all 0.3s ease-in-out;
 }
+
+#slider .left div, #slider .right div{
+    border: 25px solid transparent;
+}
+    
+#slider .left div {
+border-right: 25px solid rgb(255, 51, 0);
+}
+#slider .right div{
+border-left: 25px solid rgb(255, 51, 0);
+}
+
 #slider .right{
     right: 0px;
 }
@@ -197,8 +211,12 @@ export default {
     font-size: 20px;
     cursor: pointer;
 }
-#slider .left:hover, #slider .right:hover{
-    background-color: red;
+#slider .left div:hover{
+    border-right-color: rgb(255, 0, 242);
+
+}
+ #slider .right div:hover{
+    border-left-color:  rgb(255, 0, 242);
 }
 
 
