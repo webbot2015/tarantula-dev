@@ -116,7 +116,7 @@ export default {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent; */
     /* text-shadow: 1px 1px 1px black; */
-    font-size: 30px;
+    line-height: 60px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -193,6 +193,7 @@ display: block;
     background-size: contain;
     height: 75vh;
     position: relative;
+    box-shadow: 0px 0px 10px 5px rgb(197, 187, 187);
     
 }
 
@@ -221,7 +222,7 @@ left: 5%;
 
 
 #portfolio .portfolioContainer .applicationDevelopment_1 .image{
-    background-image: url(/public/images/portfolio/1_applicationDevelopment.jpg); 
+    background-image: url(/public/images/portfolio/1_applicationDevelopment_resize.jpg); 
 }
 #portfolio .portfolioContainer .web_design_2 .image{
     background-image: url(/public/images/portfolio/2_web_design_resized.jpg); 
