@@ -2,6 +2,7 @@
   <div class="header">
       <div class="logo">
         <!-- <a>Tarantula</a> -->
+        
         <a style="height:40px;width:40px;display:block;">
           <img src="public/images/logo.png" alt="no logo image" style="width:inherit;height:inherit;"/>
         </a>
@@ -12,8 +13,8 @@
             <ul class="">
               <li><a>Website Development</a>
                 <ul class="">
-                  <li><a>Static Design</a></li>
-                  <li><a>Dynamic Design</a></li>
+                  <router-link to="/portfolio" tag="li" exact><a>Static Design</a></router-link>
+                  <router-link to="/" tag="li" exact><a>Dynamic Design</a></router-link>
                   <li><a>Mobile Version</a></li>
                 </ul>
               </li>

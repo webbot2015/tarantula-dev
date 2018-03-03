@@ -1,7 +1,8 @@
 <template>
   <div id="gate">
     <header-t></header-t>
-    <body-t></body-t>
+    <!-- <body-t></body-t> -->
+    <router-view></router-view>
     <footer-t></footer-t>
   </div>
 </template>

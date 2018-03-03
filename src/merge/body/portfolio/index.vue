@@ -2,7 +2,7 @@
   <div id="portfolio">
       <div class="portfolioContainer">
         <div class="applicationDevelopment_1">
-            <div class="image">1111</div>   
+            <div class="image"></div>   
             <div class="text">
                  <div>Mobile Applications (APP)</div>
                 <div>Mobile Commerce</div>
@@ -17,10 +17,10 @@
                 <div>Personal Portfolio</div> 
                 <div>E-Commerce</div> 
             </div>
-            <div class="image">2222</div>
+            <div class="image"></div>
         </div>
         <div class="services_3">
-            <div class="image">3333</div>
+            <div class="image"></div>
             <div class="text">
                 <div>Social Marketing</div>
                 <div>Domain name registration</div>
@@ -36,10 +36,10 @@
                 <div>Mobile Friendly</div>
                 <div>Compatible</div>
             </div>
-            <div class="image">4444</div>
+            <div class="image"></div>
         </div>
         <div class="development_5">
-            <div class="image">5555</div>
+            <div class="image"></div>
             <div class="text">                
                 <div>Responsive Web Design</div>
                 <div>Interactive UI</div>
@@ -53,10 +53,10 @@
             <div class="text">
                 <div>Secure &amp; Scalable Hosting</div> 
             </div>
-            <div class="image">6666</div>
+            <div class="image"></div>
         </div>
         <div class="seo_7">
-            <div class="image">7777</div>
+            <div class="image"></div>
             <div class="text">
                 <div>Search Engine Optimization</div>
                 <div>LINK Building, Keyword Targeting</div>
@@ -73,10 +73,10 @@
                 <div>Email Marketing</div>
                 <div>Blogging, Social Bookmarking</div>
             </div>
-            <div class="image">8888</div>
+            <div class="image"></div>
         </div>
         <div class="socialNetwork_9">
-            <div class="image">9999</div>
+            <div class="image"></div>
             <div class="text">
                 <div>Launch Social Media Campaigns</div>
                 <div>Highlight Keywords</div>
@@ -95,15 +95,42 @@ export default {
 
 <style>
 #portfolio{
-    background-color: pink;
+   /*  background-color: rgb(7, 11, 12); */
+   background-color: white;
     height: auto;   
     width: auto;
+
+    
 }
 #portfolio .portfolioContainer{
     display: flex;
     flex-direction: column;
+
+
+
     
 }
+
+#portfolio .portfolioContainer .text{
+   /*  background: linear-gradient(120deg, blue,orange);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; */
+    /* text-shadow: 1px 1px 1px black; */
+    font-size: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 1px;
+    text-align: center;
+    
+    font-size: 32px;
+  background: -webkit-linear-gradient(#eee, #333);
+  -webkit-background-clip: text;
+ /*  -webkit-text-fill-color: transparent; */
+}
+    
+
 #portfolio .portfolioContainer .applicationDevelopment_1 ,
 #portfolio .portfolioContainer .web_design_2 ,
 #portfolio .portfolioContainer .services_3 ,
@@ -161,6 +188,8 @@ display: block;
     background-position-y: 0px;
     background-color: aqua;
     width: 50vw;
+    background-position: center;
+    background-size: cover;
 }
 
 #portfolio .portfolioContainer .applicationDevelopment_1 .image{
@@ -189,5 +218,62 @@ display: block;
 }
 #portfolio .portfolioContainer .socialNetwork_9 .image{
     background-image: url(/public/images/portfolio/9_socialNetwork.jpg); 
+}
+
+@media only screen and (max-width: 900px) {
+    
+    #portfolio .portfolioContainer .text{
+        font-size: 25px;
+    }
+
+    
+
+}
+
+@media only screen and (max-width: 600px) {
+    
+    #portfolio .portfolioContainer .text{
+        font-size: 30px;
+    }
+
+#portfolio .portfolioContainer .applicationDevelopment_1 ,
+#portfolio .portfolioContainer .web_design_2 ,
+#portfolio .portfolioContainer .services_3 ,
+#portfolio .portfolioContainer .graphic_design_4 ,
+#portfolio .portfolioContainer .development_5 ,
+#portfolio .portfolioContainer .scalableHostting_6 ,
+#portfolio .portfolioContainer .seo_7 ,
+#portfolio .portfolioContainer .marketing_8 ,
+#portfolio .portfolioContainer .socialNetwork_9 {
+    height: auto;
+}
+
+#portfolio .portfolioContainer .applicationDevelopment_1 ,
+#portfolio .portfolioContainer .web_design_2 ,
+#portfolio .portfolioContainer .services_3 ,
+#portfolio .portfolioContainer .graphic_design_4 ,
+#portfolio .portfolioContainer .development_5 ,
+#portfolio .portfolioContainer .scalableHostting_6 ,
+#portfolio .portfolioContainer .seo_7 ,
+#portfolio .portfolioContainer .marketing_8 ,
+#portfolio .portfolioContainer .socialNetwork_9 {
+    flex-direction: column;
+}
+
+#portfolio .portfolioContainer .applicationDevelopment_1 .text, #portfolio .portfolioContainer .web_design_2 .text, #portfolio .portfolioContainer .services_3 .text, #portfolio .portfolioContainer .graphic_design_4 .text, #portfolio .portfolioContainer .development_5 .text, #portfolio .portfolioContainer .scalableHostting_6 .text, #portfolio .portfolioContainer .seo_7 .text, #portfolio .portfolioContainer .marketing_8 .text, #portfolio .portfolioContainer .socialNetwork_9 .text{
+        width: 100vw;
+    height: 100vh;
+}
+
+#portfolio .portfolioContainer .applicationDevelopment_1 .image, #portfolio .portfolioContainer .web_design_2 .image, #portfolio .portfolioContainer .services_3 .image, #portfolio .portfolioContainer .graphic_design_4 .image, #portfolio .portfolioContainer .development_5 .image, #portfolio .portfolioContainer .scalableHostting_6 .image, #portfolio .portfolioContainer .seo_7 .image, #portfolio .portfolioContainer .marketing_8 .image, #portfolio .portfolioContainer .socialNetwork_9 .image 
+{
+        width: 100vw;
+        height: 100vh;
+}
+#portfolio .portfolioContainer .web_design_2 .text, #portfolio .portfolioContainer .graphic_design_4 .text, 
+ #portfolio .portfolioContainer .scalableHostting_6 .text, 
+  #portfolio .portfolioContainer .marketing_8 .text{
+      order: 4;
+}
 }
 </style>
